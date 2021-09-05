@@ -275,10 +275,10 @@ def QS(n,B,I):
     N,root,K,T = n,int(sqrt(n)),0,1
 
     if is_probable_prime(N):
-        return "prime"
+        return "Error"
     
     if isinstance(sqrt(N),int):
-        return isqrt(N)
+        return "solved"
     
     #print(root)
     #F,I = size_bound(N)
@@ -295,7 +295,7 @@ def QS(n,B,I):
     #print(smooth_nums)
     
     if len(smooth_nums) < len(factor_base):
-        return("Error")
+        return "Error"
 
     is_square, t_matrix = build_matrix(smooth_nums,factor_base)
     #builds exponent matrix mod 2 from relations
@@ -326,4 +326,4 @@ def QS(n,B,I):
             #return factor, int(N/factor)
             return "solved"
             
-    return("Didn't find any nontrivial factors!") 
+    return "Error" 
